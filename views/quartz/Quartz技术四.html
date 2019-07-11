@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quartz（四）：JobStore | doMyselfZy</title>
+    <meta name="description" content="doMyselfZy的博客，vuepress文档，JavaWiki，文档，Java教程，后端框架，教程">
+    <link rel="icon" href="/favicon.png">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?76d3ac92807272f24b9ae15d35b7e3fa";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script>
+  <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?e8d97b6a87d604bff6ab30d0d3bd0dc6";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script>
+    
+    <link rel="preload" href="/assets/css/0.styles.feb621f0.css" as="style"><link rel="preload" href="/assets/js/app.95d329f1.js" as="script"><link rel="preload" href="/assets/js/6.e87b4649.js" as="script"><link rel="preload" href="/assets/js/1.3a92e369.js" as="script"><link rel="preload" href="/assets/js/23.93a58f62.js" as="script"><link rel="prefetch" href="/assets/js/10.9962a6de.js"><link rel="prefetch" href="/assets/js/11.04ff4ae8.js"><link rel="prefetch" href="/assets/js/12.5b0be90f.js"><link rel="prefetch" href="/assets/js/13.2291c3ab.js"><link rel="prefetch" href="/assets/js/14.96135cf7.js"><link rel="prefetch" href="/assets/js/15.2332dacf.js"><link rel="prefetch" href="/assets/js/16.523b68a0.js"><link rel="prefetch" href="/assets/js/17.2d93996e.js"><link rel="prefetch" href="/assets/js/18.0af26f31.js"><link rel="prefetch" href="/assets/js/19.610f2822.js"><link rel="prefetch" href="/assets/js/20.05ffce68.js"><link rel="prefetch" href="/assets/js/21.c447065e.js"><link rel="prefetch" href="/assets/js/22.25490df5.js"><link rel="prefetch" href="/assets/js/24.9af3938e.js"><link rel="prefetch" href="/assets/js/25.756d8bac.js"><link rel="prefetch" href="/assets/js/26.b4a4df65.js"><link rel="prefetch" href="/assets/js/4.2876667a.js"><link rel="prefetch" href="/assets/js/5.d12cde30.js"><link rel="prefetch" href="/assets/js/7.1198436b.js"><link rel="prefetch" href="/assets/js/8.68340d49.js"><link rel="prefetch" href="/assets/js/9.37dc72fd.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.410fc226.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.feb621f0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container"><div><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/avatar.png" alt="doMyselfZy" class="logo"> <span class="site-name">doMyselfZy</span></a> <div class="links"><div></div> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+    首页
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="wikifont wiki-wikipediaw"></i>
+        文档wiki
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/java/" class="nav-link"><i class="wikifont wiki-java"></i>
+    Java
+  </a></li><li class="dropdown-item"><!----> <a href="/views/quartz/" class="nav-link router-link-active"><i class="wikifont wiki-tianchongxing-"></i>
+    Quartz
+  </a></li><li class="dropdown-item"><!----> <a href="/views/nginx/" class="nav-link"><i class="wikifont wiki-nginx"></i>
+    Nginx
+  </a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="wikifont wiki-xiezi"></i>
+    杂谈
+  </a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><i class="iconfont reco-date"></i>
+    时间线
+  </a></div><div class="nav-item"><a href="/views/other/about.html" class="nav-link"><i class="iconfont reco-account"></i>
+    关于我
+  </a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+    首页
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="wikifont wiki-wikipediaw"></i>
+        文档wiki
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/java/" class="nav-link"><i class="wikifont wiki-java"></i>
+    Java
+  </a></li><li class="dropdown-item"><!----> <a href="/views/quartz/" class="nav-link router-link-active"><i class="wikifont wiki-tianchongxing-"></i>
+    Quartz
+  </a></li><li class="dropdown-item"><!----> <a href="/views/nginx/" class="nav-link"><i class="wikifont wiki-nginx"></i>
+    Nginx
+  </a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="wikifont wiki-xiezi"></i>
+    杂谈
+  </a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><i class="iconfont reco-date"></i>
+    时间线
+  </a></div><div class="nav-item"><a href="/views/other/about.html" class="nav-link"><i class="iconfont reco-account"></i>
+    关于我
+  </a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Quartz（四）：JobStore</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/quartz/Quartz%E6%8A%80%E6%9C%AF%E5%9B%9B.html#job-stores" class="sidebar-link">Job Stores</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/quartz/Quartz%E6%8A%80%E6%9C%AF%E5%9B%9B.html#ramjobstore" class="sidebar-link">RAMJobStore</a></li><li class="sidebar-sub-header"><a href="/views/quartz/Quartz%E6%8A%80%E6%9C%AF%E5%9B%9B.html#jdbc-jobstore" class="sidebar-link">JDBC JobStore</a></li></ul></li></ul></section></li></ul> </aside> <div><main class="page reco-hide"> <div class="page-title"><h1>Quartz（四）：JobStore</h1> <hr> <div data-v-0b496ca7><i class="iconfont reco-account" data-v-0b496ca7><span data-v-0b496ca7>doMyselfZy</span></i> <i class="iconfont reco-date" data-v-0b496ca7><span data-v-0b496ca7>2018/9/21</span></i> <span id="/views/quartz/Quartz%E6%8A%80%E6%9C%AF%E5%9B%9B.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-2e99e05a data-v-0b496ca7><i class="iconfont reco-eye" style="margin-right: .5rem" data-v-2e99e05a></i> <a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;" data-v-2e99e05a></a></span> <!----></div></div> <div class="content default"><p>本讲主要说明Quartz中存储机制。</p> <h2 id="job-stores"><a href="#job-stores" aria-hidden="true" class="header-anchor">#</a> Job Stores</h2> <h3 id="ramjobstore"><a href="#ramjobstore" aria-hidden="true" class="header-anchor">#</a> RAMJobStore</h3> <p>RAMJobStore是使用最简单的JobStore，它也是性能最高的（在CPU时间方面）。RAMJobStore以其明显的方式获取其名称：它将其所有数据保存在RAM中。这就是为什么它是闪电般快的，也是为什么这么简单的配置。缺点是当您的应用程序结束（或崩溃）时，所有调度信息都将丢失 - 这意味着RAMJobStore无法履行作业和triggers上的“非易失性”设置。对于某些应用程序，这是可以接受的 - 甚至是所需的行为，但对于其他应用程序，这可能是灾难性的。</p> <p>配置Quartz以使用RAMJobStore</p> <div class="language-java extra-class"><pre class="language-java"><code>org<span class="token punctuation">.</span>quartz<span class="token punctuation">.</span>jobStore<span class="token punctuation">.</span><span class="token keyword">class</span> <span class="token operator">=</span> org<span class="token punctuation">.</span>quartz<span class="token punctuation">.</span>simpl<span class="token punctuation">.</span><span class="token class-name">RAMJobStore</span>
+</code></pre></div><h3 id="jdbc-jobstore"><a href="#jdbc-jobstore" aria-hidden="true" class="header-anchor">#</a> JDBC JobStore</h3> <p>JDBCJobStore也被恰当地命名 - 它通过JDBC将其所有数据保存在数据库中。因此，配置比RAMJobStore要复杂一点，而且也不是那么快。但是，性能下降并不是很糟糕，特别是如果您在主键上构建具有索引的数据库表。在相当现代的一套具有体面的LAN（在调度程序和数据库之间）的机器上，检索和更新触发triggers的时间通常将小于10毫秒。</p> <p>要使用JDBCJobStore，必须首先创建一组数据库表以供Quartz使用。您可以在Quartz发行版的“docs / dbTables”目录中找到表创建SQL脚本。如果您的数据库类型尚未有脚本，请查看其中一个脚本，然后以数据库所需的任何方式进行修改。需要注意的一点是，在这些脚本中，所有的表都以前缀“QRTZ_”开始（如表“QRTZ_TRIGGERS”和“QRTZ_JOB_DETAIL”）。只要你通知JDBCJobStore前缀是什么（在你的Quartz属性中），这个前缀实际上可以是你想要的。
+配置信息：</p> <div class="language-xml extra-class"><pre class="language-xml"><code>org.quartz.jobStore.class = org.quartz.impl.jdbcjobstore.JobStoreTX
+org.quartz.jobStore.driverDelegateClass = org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+# 配置表前缀
+org.quartz.jobStore.tablePrefix = QRTZ_
+# 配置DataSource
+org.quartz.jobStore.dataSource = myDS
+</code></pre></div><p>好了，Quartz大致的基础知识到这里就差不多完了，如果你想了解更多更新更全的配置信息，请到W3Cschool学习吧！（PS:是目前我看到整理Quartz最优质的文档）
+<a href="https://www.w3cschool.cn/quartz_doc/" target="_blank" rel="noopener noreferrer">w3cschool《Quarzt官方文档》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <!----> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">6/5/2019, 10:23:50 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/views/quartz/Quartz技术三.html" class="prev">
+          Quartz（三）：触发器Trigger
+        </a></span> <!----></p></div> </main> <div class="valine-wrapper" data-v-0162251c><div id="valine" data-v-0162251c></div></div></div> <div class="back-to-ceiling" style="right:1rem;bottom:3rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;background-color:rgba(231, 234, 241,.5);display:none;" data-v-d0bfeaa4 data-v-d0bfeaa4><i class="iconfont reco-up" data-v-d0bfeaa4></i></div></div></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.95d329f1.js" defer></script><script src="/assets/js/6.e87b4649.js" defer></script><script src="/assets/js/1.3a92e369.js" defer></script><script src="/assets/js/23.93a58f62.js" defer></script>
+  </body>
+</html>

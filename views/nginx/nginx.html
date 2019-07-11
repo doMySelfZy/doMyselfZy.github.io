@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nginx基础知识 | doMyselfZy</title>
+    <meta name="description" content="doMyselfZy的博客，vuepress文档，JavaWiki，文档，Java教程，后端框架，教程">
+    <link rel="icon" href="/favicon.png">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?76d3ac92807272f24b9ae15d35b7e3fa";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script>
+  <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?e8d97b6a87d604bff6ab30d0d3bd0dc6";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script>
+    
+    <link rel="preload" href="/assets/css/0.styles.feb621f0.css" as="style"><link rel="preload" href="/assets/js/app.95d329f1.js" as="script"><link rel="preload" href="/assets/js/6.e87b4649.js" as="script"><link rel="preload" href="/assets/js/1.3a92e369.js" as="script"><link rel="preload" href="/assets/js/16.523b68a0.js" as="script"><link rel="prefetch" href="/assets/js/10.9962a6de.js"><link rel="prefetch" href="/assets/js/11.04ff4ae8.js"><link rel="prefetch" href="/assets/js/12.5b0be90f.js"><link rel="prefetch" href="/assets/js/13.2291c3ab.js"><link rel="prefetch" href="/assets/js/14.96135cf7.js"><link rel="prefetch" href="/assets/js/15.2332dacf.js"><link rel="prefetch" href="/assets/js/17.2d93996e.js"><link rel="prefetch" href="/assets/js/18.0af26f31.js"><link rel="prefetch" href="/assets/js/19.610f2822.js"><link rel="prefetch" href="/assets/js/20.05ffce68.js"><link rel="prefetch" href="/assets/js/21.c447065e.js"><link rel="prefetch" href="/assets/js/22.25490df5.js"><link rel="prefetch" href="/assets/js/23.93a58f62.js"><link rel="prefetch" href="/assets/js/24.9af3938e.js"><link rel="prefetch" href="/assets/js/25.756d8bac.js"><link rel="prefetch" href="/assets/js/26.b4a4df65.js"><link rel="prefetch" href="/assets/js/4.2876667a.js"><link rel="prefetch" href="/assets/js/5.d12cde30.js"><link rel="prefetch" href="/assets/js/7.1198436b.js"><link rel="prefetch" href="/assets/js/8.68340d49.js"><link rel="prefetch" href="/assets/js/9.37dc72fd.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.410fc226.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.feb621f0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container"><div><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/avatar.png" alt="doMyselfZy" class="logo"> <span class="site-name">doMyselfZy</span></a> <div class="links"><div></div> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+    首页
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="wikifont wiki-wikipediaw"></i>
+        文档wiki
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/java/" class="nav-link"><i class="wikifont wiki-java"></i>
+    Java
+  </a></li><li class="dropdown-item"><!----> <a href="/views/quartz/" class="nav-link"><i class="wikifont wiki-tianchongxing-"></i>
+    Quartz
+  </a></li><li class="dropdown-item"><!----> <a href="/views/nginx/" class="nav-link router-link-active"><i class="wikifont wiki-nginx"></i>
+    Nginx
+  </a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="wikifont wiki-xiezi"></i>
+    杂谈
+  </a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><i class="iconfont reco-date"></i>
+    时间线
+  </a></div><div class="nav-item"><a href="/views/other/about.html" class="nav-link"><i class="iconfont reco-account"></i>
+    关于我
+  </a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+    首页
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="wikifont wiki-wikipediaw"></i>
+        文档wiki
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/java/" class="nav-link"><i class="wikifont wiki-java"></i>
+    Java
+  </a></li><li class="dropdown-item"><!----> <a href="/views/quartz/" class="nav-link"><i class="wikifont wiki-tianchongxing-"></i>
+    Quartz
+  </a></li><li class="dropdown-item"><!----> <a href="/views/nginx/" class="nav-link router-link-active"><i class="wikifont wiki-nginx"></i>
+    Nginx
+  </a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="wikifont wiki-xiezi"></i>
+    杂谈
+  </a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><i class="iconfont reco-date"></i>
+    时间线
+  </a></div><div class="nav-item"><a href="/views/other/about.html" class="nav-link"><i class="iconfont reco-account"></i>
+    关于我
+  </a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Nginx基础知识</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/nginx/nginx.html#一、nginx是什么？" class="sidebar-link">一、Nginx是什么？</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/nginx/nginx.html#二、特点和优势" class="sidebar-link">二、特点和优势</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/nginx/nginx.html#三、使用和扩展" class="sidebar-link">三、使用和扩展</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/nginx/nginx.html#四、概念" class="sidebar-link">四、概念</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/nginx/nginx.html#_4-1-正向代理" class="sidebar-link">4.1. 正向代理</a></li><li class="sidebar-sub-header"><a href="/views/nginx/nginx.html#_4-2-反向代理" class="sidebar-link">4.2. 反向代理</a></li><li class="sidebar-sub-header"><a href="/views/nginx/nginx.html#_4-3-优秀的代理模式" class="sidebar-link">4.3. 优秀的代理模式</a></li></ul></li><li><a href="/views/nginx/nginx.html#五、负载均衡" class="sidebar-link">五、负载均衡</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/nginx/nginx.html#六、nginx命令" class="sidebar-link">六、Nginx命令</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/nginx/nginx.html#七、nginx最常用的功能" class="sidebar-link">七、Nginx最常用的功能</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/nginx/nginx.html#八、nginx配置" class="sidebar-link">八、Nginx配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/nginx/nginx.html#_8-1-基础配置" class="sidebar-link">8.1. 基础配置</a></li><li class="sidebar-sub-header"><a href="/views/nginx/nginx.html#_8-2-main模块配置说明" class="sidebar-link">8.2. Main模块配置说明</a></li><li class="sidebar-sub-header"><a href="/views/nginx/nginx.html#_8-3-event模块" class="sidebar-link">8.3. Event模块</a></li><li class="sidebar-sub-header"><a href="/views/nginx/nginx.html#_8-4-http模块" class="sidebar-link">8.4. Http模块</a></li><li class="sidebar-sub-header"><a href="/views/nginx/nginx.html#_8-5-日志配置" class="sidebar-link">8.5. 日志配置</a></li><li class="sidebar-sub-header"><a href="/views/nginx/nginx.html#_8-6-server模块" class="sidebar-link">8.6. Server模块</a></li><li class="sidebar-sub-header"><a href="/views/nginx/nginx.html#_8-7-location模块" class="sidebar-link">8.7. location模块</a></li></ul></li></ul></section></li></ul> </aside> <div><main class="page reco-hide"> <div class="page-title"><h1>Nginx基础知识</h1> <hr> <div data-v-0b496ca7><i class="iconfont reco-account" data-v-0b496ca7><span data-v-0b496ca7>doMyselfZy</span></i> <i class="iconfont reco-date" data-v-0b496ca7><span data-v-0b496ca7>2018/9/2</span></i> <span id="/views/nginx/nginx.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-2e99e05a data-v-0b496ca7><i class="iconfont reco-eye" style="margin-right: .5rem" data-v-2e99e05a></i> <a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;" data-v-2e99e05a></a></span> <!----></div></div> <div class="content default"><p>本文主要介绍Nginx相关的基础技术，并做一些配置说明，具体实践，需要靠各位自己在实际中进行践行。</p> <h2 id="一、nginx是什么？"><a href="#一、nginx是什么？" aria-hidden="true" class="header-anchor">#</a> 一、Nginx是什么？</h2> <p>Nginx是一个web服务器，主要处理客户端和服务器的请求分发。</p> <h2 id="二、特点和优势"><a href="#二、特点和优势" aria-hidden="true" class="header-anchor">#</a> 二、特点和优势</h2> <ol><li>高并发</li> <li>热部署</li> <li>快</li> <li>低功耗</li> <li>热部署</li></ol> <h2 id="三、使用和扩展"><a href="#三、使用和扩展" aria-hidden="true" class="header-anchor">#</a> 三、使用和扩展</h2> <p>阿里技术团队在Nginx的基础上，继承全部特性，并做了更多高级封装，延伸出一个开源框架<code>Tengine</code></p> <h2 id="四、概念"><a href="#四、概念" aria-hidden="true" class="header-anchor">#</a> 四、概念</h2> <h3 id="_4-1-正向代理"><a href="#_4-1-正向代理" aria-hidden="true" class="header-anchor">#</a> 4.1. 正向代理</h3> <p><img src="http://ww1.sinaimg.cn/large/8bc108f2ly1g3q0510buxj21ww0nc41t.jpg" alt=""></p> <p>预先知道需要访问的服务器地址，最直接的案例就是VPN代理，明确知道国外机房服务器位置，但是访问的客户机不明。</p> <h3 id="_4-2-反向代理"><a href="#_4-2-反向代理" aria-hidden="true" class="header-anchor">#</a> 4.2. 反向代理</h3> <p><img src="http://ww1.sinaimg.cn/large/8bc108f2ly1g3q050yp2jj20yg0f4wn3.jpg" alt=""></p> <p>预先不知道需要访问的服务器地址，因为当高并发的访问时，会对服务器进行分布式处理，不同业务进行不同的服务器部署，这个时候访问地址不明，但是客户端访问是明确的，此称为反向代理。</p> <p>反向代理，主要用于服务器集群分布式部署的情况下，反向代理隐藏了服务器的信息</p> <h3 id="_4-3-优秀的代理模式"><a href="#_4-3-优秀的代理模式" aria-hidden="true" class="header-anchor">#</a> 4.3. 优秀的代理模式</h3> <p><img src="http://ww1.sinaimg.cn/large/8bc108f2ly1g3q050yt52j20yg0exdm9.jpg" alt=""></p> <h2 id="五、负载均衡"><a href="#五、负载均衡" aria-hidden="true" class="header-anchor">#</a> 五、负载均衡</h2> <p>Nginx负载均衡算法有好几种：</p> <p><code>Weight轮询</code>（默认）：接收到的请求按照顺序逐一分配到不同的后端服务器，即使在使用过程中，某一台后端服务器宕机，nginx会自动将该服务器剔除出队列，请求受理情况不会受到任何影响。 这种方式下，可以给不同的后端服务器设置一个权重值（weight），用于调整不同的服务器上请求的分配率；权重数据越大，被分配到请求的几率越大；该权重值，主要是针对实际工作环境中不同的后端服务器硬件配置进行调整的。</p> <h2 id="六、nginx命令"><a href="#六、nginx命令" aria-hidden="true" class="header-anchor">#</a> 六、Nginx命令</h2> <ol><li>启动方式<br>
+windows下：<code>nginx.exe</code><br>
+Linux: <code>sudo nginx</code></li> <li>关闭命令<br> <code>nginx -s stop</code>（强制停止nginx服务器，如果有未处理的数据，丢弃）<br> <code>nginx -s quit</code>（停止nginx服务器，如果有未处理的数据，等待处理完成之后停止）</li> <li>重启命令<br> <code>nginx -s reload</code></li></ol> <h2 id="七、nginx最常用的功能"><a href="#七、nginx最常用的功能" aria-hidden="true" class="header-anchor">#</a> 七、Nginx最常用的功能</h2> <ol><li>反向代理</li> <li>负载均衡</li> <li>静态服务器</li></ol> <h2 id="八、nginx配置"><a href="#八、nginx配置" aria-hidden="true" class="header-anchor">#</a> 八、Nginx配置</h2> <p><code>nginx.config</code>：最核心的配置文件</p> <h3 id="_8-1-基础配置"><a href="#_8-1-基础配置" aria-hidden="true" class="header-anchor">#</a> 8.1. 基础配置</h3> <div class="language- extra-class"><pre class="language-text"><code>main                                # 全局配置
+
+events {                            # nginx工作模式配置
+}
+
+http {                                # http设置
+    ....
+
+    server {                        # 服务器主机配置
+        ....
+        location {                    # 路由配置
+            ....
+        }
+
+        location path {
+            ....
+        }
+
+        location otherpath {
+            ....
+        }
+    }
+
+    server {
+        ....
+
+        location {
+            ....
+        }
+    }
+
+    upstream name {                    # 负载均衡配置
+        ....
+    }
+}
+</code></pre></div><h3 id="_8-2-main模块配置说明"><a href="#_8-2-main模块配置说明" aria-hidden="true" class="header-anchor">#</a> 8.2. Main模块配置说明</h3> <ol><li>user用来指定nginx worker进程运行用户以及用户组，默认nobody账号运行</li> <li>worker_processes指定nginx要开启的子进程数量，运行过程中监控每个进程消耗内存(一般几M~几十M不等)根据实际情况进行调整，通常数量是CPU内核数量的整数倍</li> <li>error_log定义错误日志文件的位置及输出级别【debug / info / notice / warn / error / crit】</li> <li>pid用来指定进程id的存储文件的位置</li> <li>worker_rlimit_nofile用于指定一个进程可以打开最多文件数量的描述</li></ol> <h3 id="_8-3-event模块"><a href="#_8-3-event模块" aria-hidden="true" class="header-anchor">#</a> 8.3. Event模块</h3> <ol><li>worker_connections 指定最大可以同时接收的连接数量，这里一定要注意，最大连接数量是和worker processes共同决定的。</li> <li>multi_accept 配置指定nginx在收到一个新连接通知后尽可能多的接受更多的连接</li> <li>use epoll 配置指定了线程轮询的方法，如果是linux2.6+，使用epoll，如果是BSD如Mac请使用Kqueue</li></ol> <h3 id="_8-4-http模块"><a href="#_8-4-http模块" aria-hidden="true" class="header-anchor">#</a> 8.4. Http模块</h3> <ul><li>sendfile on：配置on让sendfile发挥作用，将文件的回写过程交给数据缓冲去去完成，而不是放在应用中完成，这样的话在性能提升有有好处</li> <li>tc_nopush on：让nginx在一个数据包中发送所有的头文件，而不是一个一个单独发</li> <li>tcp_nodelay on：让nginx不要缓存数据，而是一段一段发送，如果数据的传输有实时性的要求的话可以配置它，发送完一小段数据就立刻能得到返回值，但是不要滥用哦</li> <li>keepalive_timeout 10：给客户端分配连接超时时间，服务器会在这个时间过后关闭连接。一般设置时间较短，可以让nginx工作持续性更好</li> <li>client_header_timeout 10：设置请求头的超时时间</li> <li>client_body_timeout 10:设置请求体的超时时间</li> <li>send_timeout 10：指定客户端响应超时时间，如果客户端两次操作间隔超过这个时间，服务器就会关闭这个链接</li> <li>limit_conn_zone $binary_remote_addr zone=addr:5m ：设置用于保存各种key的共享内存的参数，</li> <li>limit_conn addr 100: 给定的key设置最大连接数</li> <li>server_tokens：虽然不会让nginx执行速度更快，但是可以在错误页面关闭nginx版本提示，对于网站安全性的提升有好处哦</li> <li>include /etc/nginx/mime.types：指定在当前文件中包含另一个文件的指令</li> <li>default_type application/octet-stream：指定默认处理的文件类型可以是二进制</li> <li>type_hash_max_size 2048：混淆数据，影响三列冲突率，值越大消耗内存越多，散列key冲突率会降低，检索速度更快；值越小key，占用内存较少，冲突率越高，检索速度变慢</li></ul> <h3 id="_8-5-日志配置"><a href="#_8-5-日志配置" aria-hidden="true" class="header-anchor">#</a> 8.5. 日志配置</h3> <ul><li>access_log logs/access.log：设置存储访问记录的日志</li> <li>error_log logs/error.log：设置存储记录错误发生的日志</li></ul> <h3 id="_8-6-server模块"><a href="#_8-6-server模块" aria-hidden="true" class="header-anchor">#</a> 8.6. Server模块</h3> <div class="tip custom-block"><p class="custom-block-title">定义</p> <p>sever模块配置是http模块中的一个子模块，用来定义一个虚拟访问主机，也就是一个虚拟服务器的配置信息</p></div> <ul><li>server：一个虚拟主机的配置，一个http中可以配置多个server</li> <li>server_name：用力啊指定ip地址或者域名，多个配置之间用空格分隔</li> <li>root：表示整个server虚拟主机内的根目录，所有当前主机中web项目的根目录</li> <li>index：用户访问web网站时的全局首页</li> <li>charset：用于设置www/路径中配置的网页的默认编码格式</li> <li>access_log：用于指定该虚拟主机服务器中的访问记录日志存放路径</li> <li>error_log：用于指定该虚拟主机服务器中访问错误日志的存放路径</li></ul> <h3 id="_8-7-location模块"><a href="#_8-7-location模块" aria-hidden="true" class="header-anchor">#</a> 8.7. location模块</h3> <p>location模块是nginx配置中出现最多的一个配置，主要用于配置路由访问信息</p> <p>在路由访问信息配置中关联到反向代理、负载均衡等等各项功能，所以location模块也是一个非常重要的配置模块</p> <h4 id="_1-基本配置："><a href="#_1-基本配置：" aria-hidden="true" class="header-anchor">#</a> (1) 基本配置：</h4> <div class="language- extra-class"><pre class="language-text"><code>location / {
+            root   html;
+            index  index.html index.htm;
+        }
+</code></pre></div><blockquote><p>location /：表示匹配访问根目录<br>
+root：用于指定访问根目录时，访问虚拟主机的web目录
+index：在不指定访问具体资源时，默认展示的资源文件列表</p></blockquote> <h4 id="_2-反向代理配置方式："><a href="#_2-反向代理配置方式：" aria-hidden="true" class="header-anchor">#</a> (2) 反向代理配置方式：</h4> <div class="language- extra-class"><pre class="language-text"><code> location /ole-platform {
+            proxy_pass   http://ole-platform_sim/ole-platform;
+            proxy_set_header host $host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            client_max_body_size 2000m;
+        }
+</code></pre></div><h4 id="_3-upstream模块："><a href="#_3-upstream模块：" aria-hidden="true" class="header-anchor">#</a> (3) upstream模块：</h4> <div class="language- extra-class"><pre class="language-text"><code> upstream ueditor_sim {
+      server   192.168.1.178:8312;
+    }
+</code></pre></div><p>upstream模块主要负责负载均衡的配置，通过默认的轮询调度方式来分发请求到后端服务器</p> <blockquote><p>ip_hash：指定请求调度算法，默认是weight权重轮询调度，可以指定<br>
+server host:port：分发服务器的列表配置</p></blockquote> <h4 id="_4-带权重的配置："><a href="#_4-带权重的配置：" aria-hidden="true" class="header-anchor">#</a> (4) 带权重的配置：</h4> <div class="language- extra-class"><pre class="language-text"><code>upstream test {
+    server 192.168.0.1 weight=5;
+    ip_hash;
+    server 192.168.0.2 weight=7;
+}
+</code></pre></div></div> <!----> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">6/5/2019, 10:23:50 AM</span></div></footer> <!----> </main> <div class="valine-wrapper" data-v-0162251c><div id="valine" data-v-0162251c></div></div></div> <div class="back-to-ceiling" style="right:1rem;bottom:3rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;background-color:rgba(231, 234, 241,.5);display:none;" data-v-d0bfeaa4 data-v-d0bfeaa4><i class="iconfont reco-up" data-v-d0bfeaa4></i></div></div></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.95d329f1.js" defer></script><script src="/assets/js/6.e87b4649.js" defer></script><script src="/assets/js/1.3a92e369.js" defer></script><script src="/assets/js/16.523b68a0.js" defer></script>
+  </body>
+</html>
